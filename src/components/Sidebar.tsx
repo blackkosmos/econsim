@@ -3,13 +3,12 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import AppLogo from '@/components/ui/AppLogo';
-import { LayoutGrid, Zap, ShieldAlert, Trophy, BookOpen, ChevronLeft, ChevronRight, Star, Flame, Target,  } from 'lucide-react';
+import { LayoutGrid, ShieldAlert, Trophy, BookOpen, ChevronLeft, ChevronRight, Star, Flame, Target,  } from 'lucide-react';
 import Icon from '@/components/ui/AppIcon';
 
 
 const navItems = [
   { key: 'nav-crises', href: '/crises', icon: LayoutGrid, label: 'Crises', badge: null },
-  { key: 'nav-hub', href: '/scenario-hub', icon: Zap, label: 'Simulation', badge: null },
   { key: 'nav-crisis', href: '/crisis-simulation', icon: ShieldAlert, label: 'Crises Lab', badge: 'New' },
   { key: 'nav-leaderboard', href: '/leaderboard', icon: Trophy, label: 'Leaderboard', badge: null },
   { key: 'nav-theory', href: '/theory-bank', icon: BookOpen, label: 'Theory Bank', badge: null },

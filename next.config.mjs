@@ -14,16 +14,6 @@ const nextConfig = {
     remotePatterns: imageHosts,
     minimumCacheTTL: 60,
   },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/scenario-hub',
-        permanent: false,
-      },
-    ];
-  },
-
   webpack(
     config,
     {
