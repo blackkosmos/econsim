@@ -27,12 +27,14 @@ export default function Sidebar() {
     >
       {/* Logo */}
       <div className={`flex items-center h-16 px-3 border-b border-zinc-800 ${collapsed ? 'justify-center' : 'gap-2'}`}>
-        <AppLogo size={32} />
-        {!collapsed && (
-          <span className="font-semibold text-base text-zinc-100 tracking-tight">
-            EconSim
-          </span>
-        )}
+        <Link href="/" className={`flex items-center gap-2 cursor-pointer ${collapsed ? '' : ''}`}>
+          <AppLogo size={32} />
+          {!collapsed && (
+            <span className="font-semibold text-base text-zinc-100 tracking-tight">
+              EconSim
+            </span>
+          )}
+        </Link>
       </div>
       {/* Student Stats Strip */}
       {!collapsed && (
