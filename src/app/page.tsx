@@ -403,14 +403,6 @@ export default function LandingPage() {
               Explore Crises
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </Link>
-            <Link href="/scenario-hub" onClick={handleEnter}
-              className="btn-ghost inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-cyan-300">
-              Start Learning
-            </Link>
-            <Link href="/crises" onClick={handleEnter}
-              className="inline-flex items-center gap-1.5 px-5 py-3.5 rounded-xl text-sm font-medium text-zinc-500 hover:text-zinc-300 transition-colors">
-              Skip to Crises →
-            </Link>
           </div>
         </div>
 
