@@ -627,9 +627,6 @@ export default function LandingPage() {
                   <div className="text-xs text-zinc-500">&quot;The multiplier effect increases aggregate demand by a factor of 1/(1-MPC).&quot;</div>
                 </div>
               </div>
-              <div className="flex justify-center">
-                <div className="text-cyan-400 text-xl">↓</div>
-              </div>
               <div className="p-4 rounded-xl flex items-center gap-4" style={{ background: 'rgba(14,165,233,0.04)', border: '1px solid rgba(14,165,233,0.1)' }}>
                 <span className="text-2xl flex-shrink-0">⚡</span>
                 <div>

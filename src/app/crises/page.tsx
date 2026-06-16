@@ -70,7 +70,7 @@ const crises: CrisisCard[] = [
     difficulty: 'Expert', xp: 720, duration: '~40 min',
     description: 'AI-generated scenario: Multiple emerging market sovereign defaults trigger a global credit crunch. Navigate the contagion.',
     tags: ['Sovereign Debt', 'Default', 'Contagion', 'IMF'],
-    href: '/crisis-simulation', color: 'from-emerald-900/40 to-zinc-900', emoji: '🤖', isAI: true,
+    href: '/crisis-lab', color: 'from-emerald-900/40 to-zinc-900', emoji: '🤖', isAI: true,
   },
 ];
 
