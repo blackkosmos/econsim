@@ -197,11 +197,8 @@ export default function PhaseReact({ onComplete }: PhaseReactProps) {
                 {locked && (
                   <div
                     className={`mt-3 flex items-start gap-2 rounded-lg border p-3 text-xs leading-relaxed ${
-                      verdict === 'good'
-                        ? 'border-emerald-500/30 bg-emerald-500/5 text-emerald-300'
-                        : verdict === 'poor'
-                        ? 'border-red-500/30 bg-red-500/5 text-red-300'
-                        : 'border-amber-400/30 bg-amber-400/5 text-amber-200'
+                      verdict === 'good' ?'border-emerald-500/30 bg-emerald-500/5 text-emerald-300'
+                        : verdict === 'poor' ?'border-red-500/30 bg-red-500/5 text-red-300' :'border-amber-400/30 bg-amber-400/5 text-amber-200'
                     }`}
                   >
                     {verdict === 'good' ? (
@@ -213,11 +210,8 @@ export default function PhaseReact({ onComplete }: PhaseReactProps) {
                     )}
                     <span>
                       <span className="font-semibold">
-                        {verdict === 'good'
-                          ? 'Well positioned. '
-                          : verdict === 'poor'
-                          ? 'Exposed. '
-                          : 'Neutral — a more decisive move was available. '}
+                        {verdict === 'good' ?'Well positioned. '
+                          : verdict === 'poor' ?'Exposed. ' :'Neutral — a more decisive move was available. '}
                       </span>
                       {asset.rationale}
                     </span>

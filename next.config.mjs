@@ -14,6 +14,7 @@ const nextConfig = {
     remotePatterns: imageHosts,
     minimumCacheTTL: 60,
   },
+  // cache-bust: 2026-06-29
   webpack(
     config,
     {
