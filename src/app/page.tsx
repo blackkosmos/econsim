@@ -308,7 +308,7 @@ export default function LandingPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 h-14"
         style={{ background: 'rgba(2,11,24,0.9)', backdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(14,165,233,0.1)' }}>
         <div className="flex items-center gap-2">
-          <img src="/assets/images/app_logo.png" alt="EconSim Logo" className="h-8 w-auto" />
+          <img src="/assets/images/image-1782738716776.png" alt="EconSim Logo" className="h-8 w-auto" />
         </div>
         <div className="flex items-center gap-3">
           <Link href="/crises" onClick={handleEnter}
