@@ -308,10 +308,7 @@ export default function LandingPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 h-14"
         style={{ background: 'rgba(2,11,24,0.9)', backdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(14,165,233,0.1)' }}>
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-md flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0ea5e9, #0284c7)' }}>
-            <span className="text-white font-bold text-xs font-mono">E</span>
-          </div>
-          <span className="font-semibold text-sm tracking-tight text-zinc-100" style={{ fontFamily: "'DM Sans', sans-serif" }}>EconSim</span>
+          <img src="/assets/images/app_logo.png" alt="EconSim Logo" className="h-8 w-auto" />
         </div>
         <div className="flex items-center gap-3">
           <Link href="/crises" onClick={handleEnter}
