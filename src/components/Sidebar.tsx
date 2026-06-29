@@ -31,7 +31,7 @@ export default function Sidebar() {
           <AppLogo size={32} />
           {!collapsed && (
             <span className="font-semibold text-base text-zinc-100 tracking-tight">
-              EconSim
+              MacroHub
             </span>
           )}
         </Link>
