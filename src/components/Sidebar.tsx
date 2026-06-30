@@ -41,27 +41,27 @@ export default function Sidebar() {
         <div className="mx-3 mt-3 p-3 bg-zinc-800/60 rounded-lg border border-zinc-700/50">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs text-zinc-400 font-medium">Your Progress</span>
-            <span className="text-xs font-mono text-emerald-400 font-semibold">Lv. 7</span>
+            <span className="text-xs font-mono text-emerald-400 font-semibold">Lv. 1</span>
           </div>
           <div className="flex items-center gap-3 text-xs">
             <div className="flex items-center gap-1 text-amber-400">
               <Flame size={12} />
-              <span className="font-mono font-semibold">14</span>
+              <span className="font-mono font-semibold">0</span>
               <span className="text-zinc-500">streak</span>
             </div>
             <div className="flex items-center gap-1 text-emerald-400">
               <Star size={12} />
-              <span className="font-mono font-semibold">4,820</span>
+              <span className="font-mono font-semibold">0</span>
               <span className="text-zinc-500">XP</span>
             </div>
           </div>
           <div className="mt-2">
             <div className="flex justify-between text-xs text-zinc-500 mb-1">
-              <span>XP to Lv.8</span>
-              <span className="font-mono">4,820 / 6,000</span>
+              <span>XP to Lv.2</span>
+              <span className="font-mono">0 / 1,000</span>
             </div>
             <div className="h-1.5 bg-zinc-700 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-emerald-500 to-emerald-300 rounded-full" style={{ width: '80%' }} />
+              <div className="h-full bg-gradient-to-r from-emerald-500 to-emerald-300 rounded-full" style={{ width: '0%' }} />
             </div>
           </div>
         </div>
