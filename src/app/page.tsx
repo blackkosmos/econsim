@@ -308,10 +308,7 @@ export default function LandingPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 h-14"
         style={{ background: 'rgba(2,11,24,0.9)', backdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(14,165,233,0.1)' }}>
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-md flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0ea5e9, #0284c7)' }}>
-            <span className="text-white font-bold text-xs font-mono">E</span>
-          </div>
-          <span className="font-semibold text-sm tracking-tight text-zinc-100" style={{ fontFamily: "'DM Sans', sans-serif" }}>EconSim</span>
+          <img src="/assets/images/image-1782738716776.png" alt="EconSim Logo" className="h-8 w-auto" />
         </div>
         <div className="flex items-center gap-3">
           <Link href="/crises" onClick={handleEnter}
@@ -402,14 +399,6 @@ export default function LandingPage() {
               className="btn-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-white">
               Explore Crises
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </Link>
-            <Link href="/scenario-hub" onClick={handleEnter}
-              className="btn-ghost inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-cyan-300">
-              Start Learning
-            </Link>
-            <Link href="/crises" onClick={handleEnter}
-              className="inline-flex items-center gap-1.5 px-5 py-3.5 rounded-xl text-sm font-medium text-zinc-500 hover:text-zinc-300 transition-colors">
-              Skip to Crises →
             </Link>
           </div>
         </div>
@@ -626,9 +615,6 @@ export default function LandingPage() {
                   <div className="text-sm font-semibold text-red-400 mb-0.5">Passive Reading</div>
                   <div className="text-xs text-zinc-500">&quot;The multiplier effect increases aggregate demand by a factor of 1/(1-MPC).&quot;</div>
                 </div>
-              </div>
-              <div className="flex justify-center">
-                <div className="text-cyan-400 text-xl">↓</div>
               </div>
               <div className="p-4 rounded-xl flex items-center gap-4" style={{ background: 'rgba(14,165,233,0.04)', border: '1px solid rgba(14,165,233,0.1)' }}>
                 <span className="text-2xl flex-shrink-0">⚡</span>

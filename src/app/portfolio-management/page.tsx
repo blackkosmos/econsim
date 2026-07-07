@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 export default function PortfolioRedirect() {
   const router = useRouter();
   useEffect(() => {
-    router?.replace('/crisis-simulation');
+    router?.replace('/crisis-lab');
   }, [router]);
   return null;
 }

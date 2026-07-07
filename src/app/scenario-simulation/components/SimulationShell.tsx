@@ -4,26 +4,34 @@ import Link from 'next/link';
 import { ChevronRight, Zap, TrendingDown, Clock, Star } from 'lucide-react';
 import PhaseAnalyse from './PhaseAnalyse';
 import PhasePredict from './PhasePredict';
-import PhaseReact from './PhaseReact';
+import PhaseReact, { type ReactResult } from './PhaseReact';
+import PhaseReview from './PhaseReview';
 import { PredictionEntry } from '@/lib/predictionStore';
 
-export type Phase = 'analyse' | 'predict' | 'react';
+export type Phase = 'analyse' | 'predict' | 'react' | 'review';
 
 const phases: { key: Phase; label: string; desc: string }[] = [
   { key: 'analyse', label: '1. Analyse', desc: 'Study macro indicators' },
   { key: 'predict', label: '2. Predict', desc: 'Forecast the effects' },
-  { key: 'react', label: '3. React', desc: 'Adjust your portfolio' },
+  { key: 'react', label: '3. React', desc: 'Reposition your portfolio' },
+  { key: 'review', label: '4. Review', desc: 'Results & insights' },
 ];
 
 export default function SimulationShell() {
   const [phase, setPhase] = useState<Phase>('analyse');
   const [savedPredictions, setSavedPredictions] = useState<PredictionEntry[]>([]);
+  const [reactResult, setReactResult] = useState<ReactResult | null>(null);
 
   const phaseIndex = phases.findIndex((p) => p.key === phase);
 
   const handlePredictComplete = (predictions: PredictionEntry[]) => {
     setSavedPredictions(predictions);
     setPhase('react');
+  };
+
+  const handleReactComplete = (result: ReactResult) => {
+    setReactResult(result);
+    setPhase('review');
   };
 
   return (
@@ -97,7 +105,8 @@ export default function SimulationShell() {
         {/* Phase Content */}
         {phase === 'analyse' && <PhaseAnalyse onComplete={() => setPhase('predict')} />}
         {phase === 'predict' && <PhasePredict onComplete={handlePredictComplete} />}
-        {phase === 'react' && <PhaseReact predictions={savedPredictions} />}
+        {phase === 'react' && <PhaseReact onComplete={handleReactComplete} />}
+        {phase === 'review' && <PhaseReview predictions={savedPredictions} reactResult={reactResult} />}
       </div>
     </div>
   );

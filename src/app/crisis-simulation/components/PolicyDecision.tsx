@@ -51,6 +51,11 @@ export default function PolicyDecision({ policies, onChoose, stepCount }: Props)
           const CatIcon = meta.Icon;
           const isSelected = selected === policy.id;
 
+          // Count how many indicators this policy affects
+          const affectedCount = Object.values(policy.indicatorDeltas).filter(
+            (v) => v !== undefined && Math.abs(v) >= 0.01
+          ).length;
+
           return (
             <button
               key={policy.id}
@@ -69,12 +74,17 @@ export default function PolicyDecision({ policies, onChoose, stepCount }: Props)
                   {isSelected && <div className="w-2 h-2 rounded-full bg-white" />}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
+                  <div className="flex items-center gap-2 mb-1 flex-wrap">
                     <span className="text-sm font-semibold text-zinc-200">{policy.label}</span>
                     <span className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-xs font-medium border ${meta.color}`}>
                       <CatIcon size={9} />
                       {meta.label}
                     </span>
+                    {affectedCount > 0 && (
+                      <span className="text-xs text-zinc-600 font-mono">
+                        affects {affectedCount} indicator{affectedCount !== 1 ? 's' : ''}
+                      </span>
+                    )}
                   </div>
                   <p className="text-xs text-zinc-500 leading-relaxed">{policy.description}</p>
                 </div>
