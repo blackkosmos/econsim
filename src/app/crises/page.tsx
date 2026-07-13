@@ -168,7 +168,7 @@ export default function CrisesPage() {
             {[
               { label: 'Total Crises', value: crises.length.toString(), icon: Globe, color: 'text-sky-400' },
               { label: 'Completed', value: completedCount.toString(), icon: Flame, color: 'text-emerald-400' },
-              { label: 'XP Available', value: `${crises.reduce((a, c) => a + c.xp, 0).toLocaleString()}`, icon: Star, color: 'text-amber-400' },
+              { label: 'XP Available', value: String(crises.reduce((a, c) => a + c.xp, 0)).replace(/\B(?=(\d{3})+(?!\d))/g, ','), icon: Star, color: 'text-amber-400' },
               { label: 'Avg Duration', value: '~32 min', icon: Clock, color: 'text-violet-400' },
             ].map((stat) => (
               <div key={`stat-${stat.label}`} className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 flex items-center gap-3">

@@ -275,7 +275,7 @@ export default function AssetTable() {
                 </td>
                 <td className="px-3 py-3 text-right">
                   <div>
-                    <p className="text-sm font-mono font-semibold text-zinc-200 tabular-nums">${asset.value.toLocaleString()}</p>
+                    <p className="text-sm font-mono font-semibold text-zinc-200 tabular-nums">${String(asset.value).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
                     <p className="text-xs font-mono text-zinc-600 tabular-nums">{asset.quantity} × ${asset.currentPrice.toFixed(2)}</p>
                   </div>
                 </td>
@@ -287,7 +287,7 @@ export default function AssetTable() {
                     </span>
                   </div>
                   <p className={`text-xs font-mono tabular-nums text-right ${asset.totalReturn >= 0 ? 'text-emerald-400/70' : 'text-red-400/70'}`}>
-                    {asset.totalReturn >= 0 ? '+' : ''}${asset.totalReturn.toLocaleString()}
+                    {asset.totalReturn >= 0 ? '+' : ''}${String(Math.abs(asset.totalReturn)).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                   </p>
                 </td>
                 <td className="px-3 py-3 text-right">
@@ -391,7 +391,7 @@ export default function AssetTable() {
                 </div>
                 <div className="bg-zinc-800/60 rounded-lg p-3">
                   <p className="text-zinc-500 mb-0.5">Current Value</p>
-                  <p className="font-mono font-semibold text-zinc-200">${tradeModal.asset.value.toLocaleString()}</p>
+                  <p className="font-mono font-semibold text-zinc-200">${String(tradeModal.asset.value).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
                 </div>
               </div>
 

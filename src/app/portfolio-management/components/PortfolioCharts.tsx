@@ -43,8 +43,8 @@ const CustomPerfTooltip = ({ active, payload, label }: any) => {
   return (
     <div className="bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 shadow-xl">
       <p className="text-xs text-zinc-400 mb-1">{label}</p>
-      <p className="text-sm font-mono text-emerald-400 font-semibold">${payload[0]?.value?.toLocaleString()}</p>
-      <p className="text-xs font-mono text-zinc-500">Benchmark: ${payload[1]?.value?.toLocaleString()}</p>
+      <p className="text-sm font-mono text-emerald-400 font-semibold">${String(payload[0]?.value ?? '').replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
+      <p className="text-xs font-mono text-zinc-500">Benchmark: ${String(payload[1]?.value ?? '').replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
     </div>
   );
 };
