@@ -6,6 +6,7 @@ import PhaseAnalyseAsianCrisis1997 from './PhaseAnalyseAsianCrisis1997';
 import PhasePredictAsianCrisis1997 from './PhasePredictAsianCrisis1997';
 import PhaseReactAsianCrisis1997 from './PhaseReactAsianCrisis1997';
 import { PredictionEntry } from '@/lib/predictionStore';
+import { markScenarioCompleted } from '@/lib/progressStore';
 
 export type Phase = 'analyse' | 'predict' | 'react';
 
@@ -22,6 +23,7 @@ export default function SimulationShellAsianCrisis1997() {
 
   const handlePredictComplete = (predictions: PredictionEntry[]) => {
     setSavedPredictions(predictions);
+    markScenarioCompleted('crisis-afc');
     setPhase('react');
   };
 

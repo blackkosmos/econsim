@@ -6,6 +6,7 @@ import PhaseAnalyseDepression1929 from './PhaseAnalyseDepression1929';
 import PhasePredictDepression1929 from './PhasePredictDepression1929';
 import PhaseReactDepression1929 from './PhaseReactDepression1929';
 import { PredictionEntry } from '@/lib/predictionStore';
+import { markScenarioCompleted } from '@/lib/progressStore';
 
 export type Phase = 'analyse' | 'predict' | 'react';
 
@@ -22,6 +23,7 @@ export default function SimulationShellDepression1929() {
 
   const handlePredictComplete = (predictions: PredictionEntry[]) => {
     setSavedPredictions(predictions);
+    markScenarioCompleted('crisis-dep');
     setPhase('react');
   };
 

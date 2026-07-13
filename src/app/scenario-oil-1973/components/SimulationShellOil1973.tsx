@@ -6,6 +6,7 @@ import PhaseAnalyseOil1973 from './PhaseAnalyseOil1973';
 import PhasePredictOil1973 from './PhasePredictOil1973';
 import PhaseReactOil1973 from './PhaseReactOil1973';
 import { PredictionEntry } from '@/lib/predictionStore';
+import { markScenarioCompleted } from '@/lib/progressStore';
 
 export type Phase = 'analyse' | 'predict' | 'react';
 
@@ -22,6 +23,7 @@ export default function SimulationShellOil1973() {
 
   const handlePredictComplete = (predictions: PredictionEntry[]) => {
     setSavedPredictions(predictions);
+    markScenarioCompleted('crisis-oil');
     setPhase('react');
   };
 

@@ -1,8 +1,9 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import AppLayout from '@/components/AppLayout';
 import { Search, Filter, Clock, Star, TrendingDown, Globe, ChevronRight, Flame,  } from 'lucide-react';
+import { getCompletedScenarios } from '@/lib/progressStore';
 
 interface CrisisCard {
   id: string;
@@ -86,6 +87,11 @@ export default function CrisesPage() {
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
   const [activeDifficulty, setActiveDifficulty] = useState<string>('All');
+  const [completedCount, setCompletedCount] = useState(0);
+
+  useEffect(() => {
+    setCompletedCount(getCompletedScenarios().length);
+  }, []);
 
   const filtered = crises.filter((c) => {
     const matchSearch = c.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -161,7 +167,7 @@ export default function CrisesPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { label: 'Total Crises', value: crises.length.toString(), icon: Globe, color: 'text-sky-400' },
-              { label: 'Completed', value: '3', icon: Flame, color: 'text-emerald-400' },
+              { label: 'Completed', value: completedCount.toString(), icon: Flame, color: 'text-emerald-400' },
               { label: 'XP Available', value: `${crises.reduce((a, c) => a + c.xp, 0).toLocaleString()}`, icon: Star, color: 'text-amber-400' },
               { label: 'Avg Duration', value: '~32 min', icon: Clock, color: 'text-violet-400' },
             ].map((stat) => (

@@ -7,6 +7,7 @@ import PhasePredict from './PhasePredict';
 import PhaseReact, { type ReactResult } from './PhaseReact';
 import PhaseReview from './PhaseReview';
 import { PredictionEntry } from '@/lib/predictionStore';
+import { markScenarioCompleted } from '@/lib/progressStore';
 
 export type Phase = 'analyse' | 'predict' | 'react' | 'review';
 
@@ -31,6 +32,7 @@ export default function SimulationShell() {
 
   const handleReactComplete = (result: ReactResult) => {
     setReactResult(result);
+    markScenarioCompleted('crisis-gfc');
     setPhase('review');
   };
 
