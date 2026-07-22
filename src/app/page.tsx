@@ -429,7 +429,7 @@ export default function LandingPage() {
                 THE PROBLEM
               </div>
               <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                Economics Was Never Meant to Be Memorized
+                Economics Was Never Meant To Be Memorized
               </h2>
               <p className="text-zinc-400 leading-relaxed mb-5">
                 Many students spend hours memorizing definitions, diagrams, and models without developing an intuitive understanding of how economies behave.
